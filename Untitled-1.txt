@@ -1,0 +1,17 @@
+rahbariyat - fio, image, rank, mobile_phone_number, home_phone_number, email,
+reception_days
+
+NEWS_URL -> image, title, content, created_at
+ANONC_URL -> created_at, title, image, note, content
+PHOTO_URL -> created_at, image
+VIDEO_URL -> created_at, detail, 
+CENTRALHARDWARE_URL -> phone_number, image, fio, rank, mobile_phone_number, 
+home_phone_number, email, reception_days, short_bio
+VACANCY_URL -> created_at, name, education, 
+work_experience, general, url, 
+EVENT_URL -> title, image, organizer, start_date, end_date
+TENDER_URL -> created_at, image, title, content
+AUTOBI_URL -> fio, email, phone_number, comment, file
+LECTURE_URL -> file, title, created_at
+STATISTICS_URL -> statistics, statistics2, statistics3
+ADULTNEWS_URL -> image, title, content, created_at, author
