@@ -125,7 +125,11 @@ USE_TZ = True
 
 STATIC_URL =  '/static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles-cdn"
 
 MEDIA_ROOT = BASE_DIR / 'staticfiles-cdn' / "uploads"
 # Default primary key field type

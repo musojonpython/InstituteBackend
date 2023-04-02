@@ -13,7 +13,6 @@ from .serializers import (
         LectureUrlSerializer,
         StatisticsUrlSerializer,
         AdultNewsUrlSerializer,
-        # OpenBudgetNamesSerializer,
         OpenBudgetFilesSerializer,
 )
 from .models import (
@@ -99,29 +98,8 @@ class AdultNewsUrlListAPIView(ListAPIView):
     queryset = AdultNewsUrl.objects.all()
     serializer_class = AdultNewsUrlSerializer
 
-
-# class OpenBudgetNamesListAPIView(ListAPIView):
-#     queryset = OpenBudgetNames.objects.all()
-#     serializer_class = OpenBudgetNamesSerializer
-
-
 class OpenBudgetFilesListAPIView(ListAPIView):
     queryset = OpenBudgetFiles.objects.all()
     serializer_class = OpenBudgetFilesSerializer
-
-    # def get_queryset(self):
-    #     objs = OpenBudgetFiles.objects.all()
-    #     print("1 => ", objs[1].categoryName)
-    #     # print(objs)
-    #     # data = {}
-    #     # for obj in objs:
-    #     #     data = {
-    #     #         # "categoryName": OpenBudgetNames.objects.get(id=obj.categoryName.id),
-    #     #         "categoryName": obj.categoryName,
-    #     #         "title": obj.title,
-    #     #         "files": obj.files,
-    #     #     }           
-    #     #     print(data) 
-    #     return objs
     
     

@@ -36,5 +36,5 @@ urlpatterns = [
     path("adult-news/",  AdultNewsUrlListAPIView.as_view()),
     # path("openbudget-name/",  OpenBudgetNamesListAPIView.as_view()),
     path("open-budget-files/",  OpenBudgetFilesListAPIView.as_view()),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
- 
+] 
+#  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
