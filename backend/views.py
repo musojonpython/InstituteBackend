@@ -14,6 +14,7 @@ from .serializers import (
         StatisticsUrlSerializer,
         AdultNewsUrlSerializer,
         OpenBudgetFilesSerializer,
+        JournalFilesSerializer
 )
 from .models import (
             Employee,
@@ -31,8 +32,12 @@ from .models import (
             AdultNewsUrl,
             # OpenBudgetNames,
             OpenBudgetFiles,
+            JournalFilesUrl
 )
 
+class JournalFilesListAPIView(ListAPIView):
+    queryset = JournalFilesUrl.objects.all()
+    serializer_class = JournalFilesSerializer
 
 class EmployeeListAPIView(ListAPIView):
     queryset = Employee.objects.all()

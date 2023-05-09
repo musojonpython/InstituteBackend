@@ -6,6 +6,14 @@ class EmployeeAdmin(admin.ModelAdmin):
     ordering=["-id"]
     search_fields = ["fio", "rank"]
 
+class PhotoGallery(admin.ModelAdmin):
+    list_display = ["name", "image1", "created_at"]
+    search_fields = ["name"]
+
+
+class VideoGallery(admin.ModelAdmin):
+    list_display = ["name", "detail", "created_at"]
+    search_fields = ["name"]
     
 class NewsAdmin(admin.ModelAdmin):
     list_display = ["title", "content"]
@@ -19,8 +27,7 @@ class VacancyUrlAdmin(admin.ModelAdmin):
     list_display = ["name", "education", "work_experience"]
     search_fields = ["name", "education"]
 
-class EventUrlAdmin(admin.ModelAdmin):
-    # @admin.display(description='Birth decade')
+class EventUrlAdmin(admin.ModelAdmin):    
     def decade_born_in(self):
         return '%d s' % (self.start_date.year // 10 * 10)
 
@@ -36,11 +43,16 @@ class AdultNewsUrlAdmin(admin.ModelAdmin):
     search_fields = ["title", "content", "author"]
 
 class OpenBudgetFilesAdmin(admin.ModelAdmin):
-    list_display = ["title", "categoryName"]
-    search_fields = ["title", "categoryName"]
+    list_display = ["title", "files"]
+    search_fields = ["title", "files"]
+
+class JournalFilesAdmin(admin.ModelAdmin):
+    list_display = ["title", "image", "files"]
+    search_fields = ["title", "image", "files"]
 
 # admin.site.register(models.YoshlargsOidYangiliklar)
 admin.site.register(models.Employee, EmployeeAdmin)
+admin.site.register(models.JournalFilesUrl, JournalFilesAdmin)
 admin.site.register(models.CentralHardwareUrl, EmployeeAdmin)
 admin.site.register(models.NewsUrl, NewsAdmin)
 admin.site.register(models.AnoncUrl, AnoncUrlAdmin)
@@ -48,5 +60,7 @@ admin.site.register(models.VacancyUrl, VacancyUrlAdmin)
 admin.site.register(models.EventUrl, EventUrlAdmin)
 admin.site.register(models.AutobiUrl, AutobiUrlAdmin)
 admin.site.register(models.AdultNewsUrl, AdultNewsUrlAdmin)
+admin.site.register(models.photoUrl, PhotoGallery)
+admin.site.register(models.VideoUrl, VideoGallery)
 admin.site.register(models.OpenBudgetFiles, OpenBudgetFilesAdmin)
  

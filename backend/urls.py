@@ -18,6 +18,7 @@ from .views import (
             AdultNewsUrlListAPIView,
             # OpenBudgetNamesListAPIView,
             OpenBudgetFilesListAPIView,
+            JournalFilesListAPIView
         )
 
 urlpatterns = [
@@ -34,7 +35,6 @@ urlpatterns = [
     path("lecture/",  LectureUrlListAPIView.as_view()),
     path("dynamic-static/",  StatisticsUrlListAPIView.as_view()),
     path("adult-news/",  AdultNewsUrlListAPIView.as_view()),
-    # path("openbudget-name/",  OpenBudgetNamesListAPIView.as_view()),
     path("open-budget-files/",  OpenBudgetFilesListAPIView.as_view()),
+    path("journal-files/",  JournalFilesListAPIView.as_view()),
 ] 
-#  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

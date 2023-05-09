@@ -9,6 +9,7 @@ from .models import (
             VacancyUrl,
             EventUrl,
             TenderUrl,
+            JournalFilesUrl,
             AutobiUrl,
             LectureUrl,
             StatisticsUrl,
@@ -16,6 +17,11 @@ from .models import (
             # OpenBudgetNames,
             OpenBudgetFiles,
             )
+
+class JournalFilesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = JournalFilesUrl
+        fields = "__all__"
 
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -82,10 +88,6 @@ class AdultNewsUrlSerializer(serializers.ModelSerializer):
         model = AdultNewsUrl
         fields = "__all__"
 
-# class OpenBudgetNamesSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = OpenBudgetNames
-#         fields = "__all__"
 
 class OpenBudgetFilesSerializer(serializers.ModelSerializer):
     # categName = serializers.SerializerMethodField(read_only=True)

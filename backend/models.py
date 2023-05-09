@@ -30,7 +30,9 @@ class AnoncUrl(models.Model):
 
 class photoUrl(models.Model):
     name = models.CharField(max_length=150, blank=True)
-    image = models.FileField(upload_to="photos/")
+    image1 = models.FileField(upload_to="photos/", blank=True)
+    image2 = models.FileField(upload_to="photos/", blank=True)
+    image3 = models.FileField(upload_to="photos/", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -103,25 +105,21 @@ class AdultNewsUrl(models.Model):
     author = models.CharField(max_length=160)
     created_at = models.DateTimeField(auto_now_add=True)
 
-# class OpenBudgetNames(models.Model):
-#     name = 
-
-#     def __str__(self):
-#         return self.name
 
 class OpenBudgetFiles(models.Model):
-    categoryName = models.CharField(max_length=600)
-    title = models.CharField(max_length=300)
+    title = models.CharField(max_length=600)
     files = models.FileField(upload_to="openbudget/")
     created_at = models.DateTimeField(auto_now_add=True)
 
-    # @property
-    # def categoryTitle(self):
-    #     return self.categoryName
+    def __str__(self):
+        return self.title
+    
+class JournalFilesUrl(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField()
+    image = models.ImageField(upload_to="journalImages/")
+    files = models.FileField(upload_to="journalFiles/")
+    created_at = models.DateTimeField(auto_now_add=True)
 
-
-# class YoshlargsOidYangiliklar(models.Model):
-#     title = models.CharField(max_length=120)
-#     content = models.TextField()
-
-
+    def __str__(self):
+        return self.title

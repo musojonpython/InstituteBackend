@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    {% for news in latest_news %}
+    <!-- <li><a href="#"><img src="{{ news.images }}" alt="">{{ news.title }}</a></li> -->
+    <div>
+        <a href="{% url 'news_detail_page' news.pk %}"></a> 
+        <!-- yuqoridagini  o'rniga  quyidagini ishlatimiz mumkin -->
+        <a href="{{news.get_absolute_url}}"></a>
+    </div>
+    {% endfor %}
+</body>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+</html>
+
+<!-- {% extends 'base.html'%}
+{% block content %}
+    <h2> <a href="{% url 'blog_detail' blog.pk %}"></a> {{ blog.title }}</h2>
+    <p>{{blog.author}}</p>
+    <h4> {{blog.text}}</h4>
+
+{% endblock content%} -->
