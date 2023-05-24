@@ -37,4 +37,4 @@ urlpatterns = [
     path("adult-news/",  AdultNewsUrlListAPIView.as_view()),
     path("open-budget-files/",  OpenBudgetFilesListAPIView.as_view()),
     path("journal-files/",  JournalFilesListAPIView.as_view()),
-] 
+]
